@@ -439,7 +439,7 @@ class BotManTest extends TestCase
         ]);
 
         $botman->hears('foo', function ($bot) use (&$called) {
-            $called = true;
+            $called = false;
         })->driver(TestAdditionalDriver::class);
         $botman->listen();
         $this->assertFalse($called);
